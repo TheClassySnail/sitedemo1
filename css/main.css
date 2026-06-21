@@ -1,0 +1,417 @@
+:root {
+    --card-bg: #da9ff2;
+    --cardbghover: #d386f2;
+    --text-color: #000000;
+    --shadow-light: 0 8px 12px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.295);
+    --spacing-unit: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/*
+==================================
+background
+==================================
+*/
+
+body {
+    margin: 0;
+    padding-bottom: 1%;
+    /*background-color: #9d3562;
+    background-image: url(/images/fem.png);*/
+
+    background: linear-gradient(180deg, #9d3562 40%, #ffd700 100%);
+
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 100rem;
+    padding: 4% 3%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*
+==================================
+Top title
+==================================
+*/
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e87de1;
+    box-shadow: var(--shadow-hover);
+    z-index: 9999;
+    display: flex;
+    /* Keeps the bar full width */
+    align-items: center;
+    /* Vertically centers the inner content */
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    /* Provides the buffer from the screen edges */
+    display: flex;
+    justify-content: space-between;
+    /* Pushes Title left, Subtitle right */
+    align-items: center;
+}
+
+.caption {
+    margin-left: 30px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/*
+==================================
+card grid 
+==================================
+*/
+
+.grid-container {
+    display: grid;
+    row-gap: 3%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.card {
+    overflow: hidden;
+    position: relative;
+    width: 60%;
+    height: auto;
+    min-height: 2rem;
+    border-radius: 1rem;
+    border: 3px solid #FFD700;
+    box-shadow: var(--shadow-light);
+    background-color: var(--card-bg);
+    opacity: 0.90;
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+    display: flex;
+}
+
+.card p {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/*
+==================================
+card interaction
+==================================
+*/
+
+.cardLink {
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    box-sizing: border-box;
+    justify-content: space-between;
+    gap: 6rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    background-color: var(--cardbghover);
+    opacity: 1;
+}
+
+/*
+==================================
+Booking banner and footer
+==================================
+*/
+
+.bookingBanner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 7rem;
+    background-color: var(--text-color);
+    color: #ffffff;
+    z-index: 9999;
+    text-align: center;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.541);
+}
+
+.banner-content p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Forces a specific distance between the number, 'or', and email */
+    flex-wrap: wrap;
+}
+
+.booking-number,
+.booking-email {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.separator {
+    font-size: 1rem;
+    opacity: 0.6;
+    font-style: italic;
+    margin: 0 10px;
+}
+
+footer {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.footerText {
+    text-align: inherit;
+    border-top: none;
+}
+
+.footerOwnership {
+    text-align: inherit;
+    padding-bottom: 5%;
+    font-weight: 600;
+}
+
+/*
+==================================
+top title for sub-pages
+==================================
+*/
+
+.indexLink {
+    text-decoration-line: underline;
+    font-style: italic;
+}
+
+/*
+==================================
+sub-page portfolio content
+==================================
+*/
+
+.portfolioImg {
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    background: var(--card-bg);
+    border: 0.2rem solid #ffd700;
+    border-radius: 10%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.479);
+    width: 90%;
+    max-width: 500px;
+}
+
+.portfolioImg img {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.portfolioText {
+    padding: 0 1rem 3rem 1rem;
+    text-align: left;
+}
+
+.portfolioText h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.portfolioText p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/*
+==================================
+screen dependant layout variation
+==================================
+*/
+
+@media (max-width: 760px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, fr);
+        gap: 1rem;
+        max-width: 9100x;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 100%;
+        overflow: hidden;
+        opacity: 0.90;
+
+        padding: 5%;
+    }
+
+    .cardLink {
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        box-sizing: border-box;
+
+        padding: 1%;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+        margin-bottom: 1%;
+        font-weight: 500;
+    }
+
+    .price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: auto;
+    }
+
+    .banner-content p {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+        opacity: 0.7;
+    }
+
+    .bookingBanner {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 11%;
+        background-color: var(--text-color);
+        color: #ffffff;
+        z-index: 9999;
+        text-align: center;
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.541);
+    }
+
+    .booking-number,
+    .booking-email {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-bottom: 2px solid #eaeaea;
+    }
+
+    footer {
+        margin-top: 3%;
+        text-align: center;
+    }
+
+    .footerText {
+        text-align: inherit;
+        border-top: none;
+    }
+
+    .footerOwnership {
+        text-align: inherit;
+        margin-bottom: 17%;
+        font-weight: 600;
+    }
+}
+
+
+@media (min-width: 1024px) {
+
+    header {
+        height: 6.5rem;
+    }
+
+    .bookingBanner {
+        height: 6rem;
+    }
+
+    .header-inner {
+        align-items: center;
+
+    }
+
+    .card {
+        min-height: 500px;
+
+    }
+
+    .card h3 {
+        font-size: 2.2rem;
+    }
+
+    .card p {
+        font-size: 1.1rem;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding-bottom: 40px;
+    }
+
+    footer {
+        margin-top: 6rem;
+    }
+}
